@@ -23,11 +23,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G5T-jJ-vP6">
-                                <rect key="frame" x="16" y="40" width="343" height="96.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G5T-jJ-vP6">
+                                <rect key="frame" x="16" y="40" width="343" height="58.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cV-uY-N8F">
-                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="20.5"/>
+                                        <rect key="frame" x="130" y="0.0" width="83.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -38,20 +38,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7z-MS-jaC">
-                                        <rect key="frame" x="0.0" y="66.5" width="151" height="30"/>
-                                        <state key="normal" title="Set Default Label Text"/>
-                                        <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZE-5a-ODC"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="tB0-Ce-LQR" secondAttribute="trailing" id="JIL-Dk-vT3"/>
                                 </constraints>
                             </stackView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="L8J-oe-0PR">
-                                <rect key="frame" x="16" y="143.5" width="320" height="320"/>
+                                <rect key="frame" x="27" y="105.5" width="320" height="320"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Is5-wk-vs2"/>
@@ -62,20 +55,28 @@
                                     <outletCollection property="gestureRecognizers" destination="1CB-Ll-cTe" appends="YES" id="FIn-ie-s78"/>
                                 </connections>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t35-AL-FRe" customClass="RatingControl" customModule="Food_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="60" y="434" width="252" height="44"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="G5T-jJ-vP6" secondAttribute="trailing" id="Iea-Ra-Dgt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L8J-oe-0PR" secondAttribute="trailing" constant="12" id="W5P-md-IQN"/>
+                            <constraint firstItem="t35-AL-FRe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="WUr-a2-2ue"/>
                             <constraint firstItem="G5T-jJ-vP6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y65-BO-QHp"/>
+                            <constraint firstItem="t35-AL-FRe" firstAttribute="top" secondItem="L8J-oe-0PR" secondAttribute="bottom" constant="8" symbolic="YES" id="gEM-Do-eDL"/>
                             <constraint firstItem="L8J-oe-0PR" firstAttribute="top" secondItem="G5T-jJ-vP6" secondAttribute="bottom" constant="7" id="hTj-dN-exV"/>
                             <constraint firstItem="G5T-jJ-vP6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="qSA-8Y-dyt"/>
-                            <constraint firstItem="L8J-oe-0PR" firstAttribute="leading" secondItem="G5T-jJ-vP6" secondAttribute="leading" id="uOC-Gv-msk"/>
+                            <constraint firstItem="L8J-oe-0PR" firstAttribute="leading" secondItem="G5T-jJ-vP6" secondAttribute="leading" constant="11" id="uOC-Gv-msk"/>
+                            <constraint firstItem="L8J-oe-0PR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="xeL-W7-GTl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="2cV-uY-N8F" id="nKf-Xg-97p"/>
                         <outlet property="nameTextField" destination="tB0-Ce-LQR" id="51x-3t-zki"/>
                         <outlet property="photoImageView" destination="L8J-oe-0PR" id="Xpr-nj-0XE"/>
+                        <outlet property="ratingControl" destination="t35-AL-FRe" id="s4t-9y-Vfr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
